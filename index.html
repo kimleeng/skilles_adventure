@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08171f" />
+    <meta name="description" content="A mysterious little underwater adventure. Guide Skille the turtle, catch shrimp, dodge trash, and discover the golden shrimp." />
+    <title>Skille’s Adventure · Into the deep</title>
+    <link rel="icon" type="image/svg+xml" href="/turtle.svg" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <a class="brand" href="/" aria-label="Skille’s Adventure home">
+          <img src="/turtle.svg" alt="" width="52" height="44" />
+          <span>skille’s <strong>adventure</strong><small>A LITTLE TURTLE. A BIG WORLD.</small></span>
+        </a>
+        <span class="edition"><span class="sparkle">✦</span> THE AQUARIUM CHAPTER</span>
+      </header>
+
+      <section class="adventure" aria-labelledby="adventure-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="status-dot"></span> SOMETHING WONDERFUL LIES BELOW</p>
+            <h1 id="adventure-title">Into the deep<span>.</span></h1>
+          </div>
+          <div class="toolbar">
+            <button class="tool-button" id="sound-button" aria-label="Turn sound on" aria-pressed="false" title="Turn sound on"><span id="sound-icon" aria-hidden="true">♪</span><span id="sound-label">Sound off</span></button>
+            <button class="tool-button" id="help-button" aria-label="How to play"><span class="keycap" aria-hidden="true">?</span><span>How to play</span></button>
+          </div>
+        </div>
+
+        <div class="aquarium-frame">
+          <div class="hud" aria-label="Adventure progress">
+            <div class="hud-group health-group"><span class="hud-label">YOUR HEARTS</span><div id="hearts" class="hearts" role="img" aria-label="3 of 3 hearts"><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span></div></div>
+            <div class="hud-group shrimp-group"><span class="hud-label">SHRIMP CAUGHT</span><span class="hud-number"><span class="shrimp-symbol" aria-hidden="true">✧</span> <span id="score">00</span></span></div>
+            <div class="hud-group time-group"><span class="hud-label" id="clock-label">UNTIL THE GOLDEN SHRIMP</span><span class="hud-number" id="clock">10:00</span></div>
+            <button class="pause-button" id="pause-button" aria-label="Pause adventure" title="Pause (P or Escape)" disabled><span class="pause-symbol" aria-hidden="true"></span></button>
+          </div>
+
+          <canvas id="aquarium" width="960" height="600" role="img" aria-label="A mysterious pixel art aquarium with Skille, a big green turtle, shrimp, seaweed, ancient ruins, and drifting trash.">Guide the turtle using your mouse, touch, or the arrow keys. Catch shrimp and avoid trash.</canvas>
+
+          <div class="scene-caption" id="scene-caption"><span class="tiny-diamond">◆</span> THE QUIET REEF <span class="coordinates">DEPTH 08 M</span></div>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-card" id="overlay-card">
+              <p class="overlay-eyebrow" id="overlay-eyebrow">AN UNDERWATER ODYSSEY</p>
+              <h2 id="overlay-title">A little turtle.<br /><em>A deep blue mystery.</em></h2>
+              <p class="overlay-description" id="overlay-description">Meet Skille. Follow the shrimp through a forgotten reef.<br class="desktop-break" /> Stay curious, swim carefully, and see what glitters at the end.</p>
+              <button class="primary-button" id="play-button">Dive in <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" /></svg></button>
+              <p class="overlay-hint" id="overlay-hint"><span class="mouse-icon" aria-hidden="true"></span> MOVE YOUR MOUSE TO SWIM</p>
+              <p class="round-details" id="round-details">10 minutes · 3 hearts · 1 golden shrimp</p>
+            </div>
+          </div>
+          <div class="notice" id="notice" aria-live="polite" aria-atomic="true"></div>
+        </div>
+
+        <div class="journey-bar"><span id="journey-label">YOUR JOURNEY</span><div class="journey-track" role="progressbar" aria-label="Journey to the golden shrimp" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="journey-progress"><span id="journey-fill"></span></div><span class="golden-label"><span aria-hidden="true">✦</span> THE GOLDEN SHRIMP</span></div>
+
+        <div class="field-notes" aria-label="How the adventure works">
+          <article class="field-note"><canvas class="note-sprite" id="turtle-note" width="72" height="64" aria-hidden="true"></canvas><div><p class="note-label">01 / FIND YOUR FLOW</p><h3>You lead. Skille follows.</h3><p>Move your mouse and glide through the reef.<br /> Touch or arrow keys work, too.</p></div></article>
+          <article class="field-note"><canvas class="note-sprite" id="shrimp-note" width="72" height="64" aria-hidden="true"></canvas><div><p class="note-label">02 / A LITTLE SNACK</p><h3>Shrimp good. Trash bad.</h3><p>Catch the pink ones. Dodge the drifting litter.<br /> Every bump costs a heart.</p></div></article>
+          <article class="field-note"><canvas class="note-sprite" id="golden-note" width="72" height="64" aria-hidden="true"></canvas><div><p class="note-label">03 / FOLLOW THE GLOW</p><h3>A golden ending awaits.</h3><p>Explore for ten minutes, then catch<br /> the golden shrimp to finish your adventure.</p></div></article>
+        </div>
+      </section>
+
+      <footer><span>Made for a curious explorer.</span><span class="footer-right">TAKE A BREATH. TAKE A DIVE. <span aria-hidden="true">✦</span></span></footer>
+    </main>
+
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Close instructions">✕</button></form>
+      <p class="eyebrow">A NOTE FROM THE REEF</p><h2 id="help-title">How to adventure</h2>
+      <p>Skille swims smoothly toward your mouse. On a touchscreen, drag your finger through the water. You can also use <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>.</p>
+      <ul><li><strong>Catch pink shrimp</strong> to grow your score.</li><li><strong>Avoid bottles, cans, and plastic bags.</strong> A bump costs a heart. Skille briefly glows so you have time to swim away.</li><li><strong>Keep exploring for ten minutes.</strong> Then a golden shrimp appears in the glowing arch. Catch it to win!</li></ul>
+      <p>Pause with <kbd>P</kbd> or <kbd>Esc</kbd>. Your adventure also pauses when you leave this tab.</p>
+      <button class="primary-button" id="help-done">Got it <svg class="arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" /></svg></button>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
